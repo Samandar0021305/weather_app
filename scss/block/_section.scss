@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+}
+.wrapper{
+    height: 100vh;
+    background: url("../../img/noaa-kcvlb727mn8-unsplash.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#city{
+    color: white;
+    font-size: 30px;
+}
+#weatherText , h3{
+    font-size: 100px;
+    color: white;
+}
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 50%;
+}
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+}
+.section input[type="search"]{
+    border-radius: 16px 0 16px 0;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 4px solid rgb(166, 249, 1);
+    outline: none;
+    transition: border-radius 0.4s ease-in;
+}
+
+.section input:focus{
+    border-radius: 0 16px 0 16px;
+}
+
+.section input:hover{
+    border-radius: 0 16px 0 16px;
+}
+
+h4{
+    font-size: 50px;
+    color: white;
+}
+
+
+.header-box{
+    width: 400px;
+    height: 300px;
+    background-color: darkorange;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius:20px;
+    box-shadow: 0 0 0 10px black;
+}
+
+
+@media (max-width:900px){
+    .container{
+        width: 90%;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .header-box{
+        width: 100%;
+    }
+    #weatherText ,h3{
+        font-size: 30px;
+    }
+}

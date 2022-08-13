@@ -1,18 +1,28 @@
+var city = document.getElementById("city");
+var weatherText = document.getElementById("weatherText");
+var searchId = document.getElementById("searchId");
+
+var country = document.getElementById("country");
+
+var img = document.getElementById("img");
+
+searchId.value = "ohangaron";
+
 const api = {
-    key:"a5ccbd68de38d5a7bcc55e5d630b60e5",
+    key:"d7619de7c1782d871c6e08354b78f9a0",
     url:"https://api.openweathermap.org/data/2.5/"
 }
 
-var inputWeather = document.getElementById("inputWeather")
-var title  = document.getElementById("title")
-inputWeather.addEventListener("keyup",(e)=>{
-    if(e.keyCode == 13){
-        urlApi(inputWeather.value)
-        console.log(inputWeather.value);
-    }
-})
+searchId.addEventListener("keyup",(event)=>{
+    if(event.keyCode == 13){
+        console.log(searchId.value);
+        apiRender(searchId.value);
 
-function urlApi(weather){
+        searchId.value = ""
+    }
+});
+
+function apiRender(weather){
     fetch(`${api.url}weather?q=${weather}&units=metric&APPID=${api.key}`)
     .then(Response =>{
         let data = Response.json()
@@ -24,6 +34,7 @@ function urlApi(weather){
 }
 
 function render(data){
-console.log(data);
-title.textContent = data.main.temp
+    city.textContent = data.name;
+    weatherText.textContent = data.main.temp;
+    country.textContent = data.sys.country;
 }
